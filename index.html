@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Is it Dodge Tuesday?</h1>
+
+  <em>Today's date is:
+
+    <script>document.write(new Date())</script>
+  </em>
+
+  <h2>
+    <script>
+      var today = new Date();
+      var day = today.getDay();
+      if (day == 2) {
+        document.write("It is Dodge Tuesday!!!");
+      }
+      if (day == 1) {
+        document.write("It is Dodge Tuesday's Eve!");
+      } else {
+        document.write("No, it is not Dodge Tuesday. :(");
+      }
+    </script>
+    
+  </h2>
+
+  </script>
+
+
+
+</body>
+
+</html>
