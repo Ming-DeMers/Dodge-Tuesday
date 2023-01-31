@@ -12,16 +12,16 @@
 
 <body>
   <div class="header">
-    <img id="crc-logo" src="images/screen-shot-20190827-at-55425-pm.png" alt="crc logo">
+    <img id="crc-logo" src="images/crc_logo.png" alt="crc logo">
 
     <h1>Is it Dodge Tuesday?</h1>
+
   </div>
   <em>Today's date is:
 
     <script>document.write(new Date())</script>
   </em>
 
-  <h2>Answer:</h2>
   <h3>
     <script>
       var today = new Date();
@@ -39,30 +39,26 @@
     </script>
   </h3>
 
-  <h2>The next Dodge Tuesday is...</h2>
+  <p>The next Dodge Tuesday is
+    <script>
+      // count the time until Dodge Tuesday
+      var today = new Date();
+      var day = today.getDay();
+      var time = today.getTime();
+      var nextTuesday = new Date();
+      nextTuesday.setDate(today.getDate() + (2 + 7 - day) % 7);
+      nextTuesday.setHours(0, 0, 0, 0);
+      var timeUntil = nextTuesday.getTime() - time;
+      var daysUntil = Math.floor(timeUntil / (1000 * 60 * 60 * 24));
+      var minsUntil = Math.floor((timeUntil % (1000 * 60 * 60 * 24)) / (1000 * 60));
+      document.write(daysUntil + " days and " + minsUntil + " minutes away!");
+    </script>
+  </p>
 
-  <script>
-    // count the time until Dodge Tuesday
-    var today = new Date();
-    var day = today.getDay();
-    var time = today.getTime();
-    var nextTuesday = new Date();
-    nextTuesday.setDate(today.getDate() + (2 + 7 - day) % 7);
-    nextTuesday.setHours(0, 0, 0, 0);
-    var timeUntil = nextTuesday.getTime() - time;
-    var daysUntil = Math.floor(timeUntil / (1000 * 60 * 60 * 24));
-    var minsUntil = Math.floor((timeUntil % (1000 * 60 * 60 * 24)) / (1000 * 60));
-    document.write(daysUntil + " days and " + minsUntil + " minutes away!");
-
-
-
-  </script>
-  <footer> 
-    <em>Brought to you by Ming DeMers for the CRC Club.</em>
+  <footer>
+    <em>Brought to you by Ming DeMers for the Cornell Running Club.</em>
   </footer>
   </script>
-
-
 
 </body>
 
